@@ -53,6 +53,27 @@ class ViewController: NSViewController {
   }
   
   @IBAction func chooseOutputFolder(_ sender: NSButton) {
+    let dialog = NSOpenPanel()
+    
+    dialog.title                   = "Choose an output folder for .csv files"
+    dialog.showsResizeIndicator    = true
+    dialog.showsHiddenFiles        = true
+    dialog.canChooseDirectories    = true
+    dialog.canChooseFiles          = false
+    dialog.canCreateDirectories    = true
+    dialog.allowsMultipleSelection = false
+    
+    if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+      guard let url = dialog.url else {
+        return
+      }
+      let path = url.path
+      outputFolderTextField.stringValue = path
+      outputFolderPath = path
+    } else {
+      // User clicked on "Cancel"
+      return
+    }
   }
   
   @IBAction func startConvert(_ sender: NSButton) {
