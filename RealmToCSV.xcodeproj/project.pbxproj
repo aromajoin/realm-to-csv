@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE27C8A42189A720008C763B /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = CE27C8A32189A720008C763B /* CHANGELOG.md */; };
 		CE93B375218993F500849240 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE93B374218993F500849240 /* README.md */; };
 		CEE689872189658200724CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE689862189658200724CC3 /* AppDelegate.swift */; };
 		CEE689892189658200724CC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE689882189658200724CC3 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 		1D3546AFD9C93EC10BFD48E3 /* Pods_RealmToCSV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmToCSV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E40C97852A82F9B23A1F176 /* Pods-RealmToCSV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmToCSV.debug.xcconfig"; path = "Target Support Files/Pods-RealmToCSV/Pods-RealmToCSV.debug.xcconfig"; sourceTree = "<group>"; };
 		9D705486EB825EC7871D87B4 /* Pods-RealmToCSV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmToCSV.release.xcconfig"; path = "Target Support Files/Pods-RealmToCSV/Pods-RealmToCSV.release.xcconfig"; sourceTree = "<group>"; };
+		CE27C8A32189A720008C763B /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		CE93B374218993F500849240 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEE689832189658200724CC3 /* RealmToCSV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmToCSV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE689862189658200724CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		CEE6897A2189658200724CC3 = {
 			isa = PBXGroup;
 			children = (
+				CE27C8A32189A720008C763B /* CHANGELOG.md */,
 				CE93B374218993F500849240 /* README.md */,
 				CEE689852189658200724CC3 /* RealmToCSV */,
 				CEE689842189658200724CC3 /* Products */,
@@ -153,6 +156,7 @@
 				CE93B375218993F500849240 /* README.md in Resources */,
 				CEE6898B2189658400724CC3 /* Assets.xcassets in Resources */,
 				CEE6898E2189658400724CC3 /* Main.storyboard in Resources */,
+				CE27C8A42189A720008C763B /* CHANGELOG.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
