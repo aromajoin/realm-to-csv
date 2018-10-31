@@ -716,7 +716,7 @@
                                     <constraint firstAttribute="width" constant="120" id="0AN-jr-bVw"/>
                                     <constraint firstAttribute="height" constant="36" id="u3s-SQ-arM"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="CONVERT" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bhj-XZ-7K4">
+                                <buttonCell key="cell" type="push" title="CONVERT" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bhj-XZ-7K4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -793,6 +793,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="convertButton" destination="fJ5-kf-aEw" id="zZf-PE-ol2"/>
                         <outlet property="outputFolderTextField" destination="P3S-fX-R9f" id="Bv7-tt-pUH"/>
                         <outlet property="realmFileTextField" destination="CA5-Js-2p2" id="Dxp-96-Rpu"/>
                     </connections>

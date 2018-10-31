@@ -12,9 +12,18 @@ import RealmConverter
 class ViewController: NSViewController {
   @IBOutlet weak var realmFileTextField: NSTextField!
   @IBOutlet weak var outputFolderTextField: NSTextField!
+  @IBOutlet weak var convertButton: NSButton!
   
-  private var realmFilePath: String?
-  private var outputFolderPath: String?
+  private var realmFilePath: String? {
+    didSet {
+      convertButton.isEnabled = realmFilePath != nil && outputFolderPath != nil
+    }
+  }
+  private var outputFolderPath: String? {
+    didSet {
+      convertButton.isEnabled = realmFilePath != nil && outputFolderPath != nil
+    }
+  }
   
   @IBAction func chooseRealmFile(_ sender: NSButton) {
     let choosenPath = chooseFileOrFolder(folderSelection: false, fileSelection: true, fileTypes: ["realm"])
@@ -48,6 +57,10 @@ class ViewController: NSViewController {
     }
     
     convertRealmToCSV(realmFilePath: realmFilePath, outputFolderPath: outputFolderPath)
+  }
+  
+  private func updateConvertButtonUI() {
+    
   }
   
   /// Opens dialog to choose a file or folder.
