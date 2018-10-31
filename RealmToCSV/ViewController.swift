@@ -10,6 +10,11 @@ import Cocoa
 import RealmConverter
 
 class ViewController: NSViewController {
+  @IBOutlet weak var realmFileTextField: NSTextField!
+  @IBOutlet weak var outputFolderTextField: NSTextField!
+  
+  private var realmFilePath: String?
+  private var outputFolderPath: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,9 +28,21 @@ class ViewController: NSViewController {
     }
   }
   
+  @IBAction func chooseRealmFile(_ sender: NSButton) {
+
+  }
+  
+  @IBAction func chooseOutputFolder(_ sender: NSButton) {
+  }
+
   @IBAction func startConvert(_ sender: NSButton) {
-    let realmFilePath = "/Users/user/Desktop/RealmSample/default.realm" // Absolute file path to my Realm file
-    let outputFolderPath = "/Users/user/Desktop/RealmSample/" // Absolute path to the folder which will hold the CSV files
+    guard let realmFilePath = realmFilePath else {
+      return
+    }
+    
+    guard let outputFolderPath = outputFolderPath else {
+      return
+    }
     
     convertRealmToCSV(realmFilePath: realmFilePath, outputFolderPath: outputFolderPath)
   }

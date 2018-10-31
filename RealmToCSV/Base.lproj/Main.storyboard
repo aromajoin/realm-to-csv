@@ -710,10 +710,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJ5-kf-aEw">
-                                <rect key="frame" x="165" y="111" width="150" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="START" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bhj-XZ-7K4">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fJ5-kf-aEw">
+                                <rect key="frame" x="174" y="9" width="132" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="0AN-jr-bVw"/>
+                                    <constraint firstAttribute="height" constant="36" id="u3s-SQ-arM"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="CONVERT" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bhj-XZ-7K4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -721,8 +724,78 @@
                                     <action selector="startConvert:" target="XfG-lQ-9wD" id="jcA-Th-Whm"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wJZ-x3-RP0">
+                                <rect key="frame" x="3" y="146" width="159" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="7cj-j0-YQR"/>
+                                    <constraint firstAttribute="height" constant="36" id="EW3-tl-kO3"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Choose Realm File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wU7-b0-vD0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="chooseRealmFile:" target="XfG-lQ-9wD" id="gsw-Z0-uIs"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CA5-Js-2p2">
+                                <rect key="frame" x="173" y="163" width="37" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="5PN-5G-g11">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P3S-fX-R9f">
+                                <rect key="frame" x="173" y="104" width="37" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="CEf-P1-kZT">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="faK-vr-sc0">
+                                <rect key="frame" x="150" y="231" width="180" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Realm to CSV Converter" id="RQA-96-7c9">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jif-bh-8up">
+                                <rect key="frame" x="3" y="87" width="159" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="5um-3p-Ylp"/>
+                                    <constraint firstAttribute="height" constant="36" id="ia0-OQ-YrL"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Choose Output Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mef-6W-YGg">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="chooseOutputFolder:" target="XfG-lQ-9wD" id="1Wj-09-yNN"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="faK-vr-sc0" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="6Uh-cu-g8b"/>
+                            <constraint firstItem="CA5-Js-2p2" firstAttribute="leading" secondItem="wJZ-x3-RP0" secondAttribute="trailing" constant="19" id="8bW-GB-eWc"/>
+                            <constraint firstItem="P3S-fX-R9f" firstAttribute="centerY" secondItem="Jif-bh-8up" secondAttribute="centerY" id="BIQ-hs-Rk3"/>
+                            <constraint firstItem="wJZ-x3-RP0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="9" id="JbC-Tw-Xx8"/>
+                            <constraint firstItem="P3S-fX-R9f" firstAttribute="leading" secondItem="Jif-bh-8up" secondAttribute="trailing" constant="19" id="Zxm-Ys-vWj"/>
+                            <constraint firstItem="fJ5-kf-aEw" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="eEv-ur-ajb"/>
+                            <constraint firstItem="faK-vr-sc0" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="gNe-xv-vDv"/>
+                            <constraint firstItem="CA5-Js-2p2" firstAttribute="centerY" secondItem="wJZ-x3-RP0" secondAttribute="centerY" id="icY-9G-VWy"/>
+                            <constraint firstItem="wJZ-x3-RP0" firstAttribute="top" secondItem="faK-vr-sc0" secondAttribute="bottom" constant="42" id="jJp-hK-7eI"/>
+                            <constraint firstAttribute="bottom" secondItem="fJ5-kf-aEw" secondAttribute="bottom" constant="16" id="jo5-hB-sPw"/>
+                            <constraint firstItem="Jif-bh-8up" firstAttribute="top" secondItem="wJZ-x3-RP0" secondAttribute="bottom" constant="23" id="oHb-bH-cbO"/>
+                            <constraint firstItem="Jif-bh-8up" firstAttribute="leading" secondItem="wJZ-x3-RP0" secondAttribute="leading" id="vuF-AH-MBA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputFolderTextField" destination="P3S-fX-R9f" id="Bv7-tt-pUH"/>
+                        <outlet property="realmFileTextField" destination="CA5-Js-2p2" id="Dxp-96-Rpu"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
