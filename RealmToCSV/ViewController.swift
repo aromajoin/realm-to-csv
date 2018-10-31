@@ -29,51 +29,25 @@ class ViewController: NSViewController {
   }
   
   @IBAction func chooseRealmFile(_ sender: NSButton) {
-    let dialog = NSOpenPanel()
+    let choosenPath = chooseFileOrFolder(folderSelection: false, fileSelection: true, fileTypes: ["realm"])
     
-    dialog.title                   = "Choose a .realm file"
-    dialog.showsResizeIndicator    = true
-    dialog.showsHiddenFiles        = true
-    dialog.canChooseDirectories    = false
-    dialog.canCreateDirectories    = true
-    dialog.allowsMultipleSelection = false
-    dialog.allowedFileTypes        = ["realm"]
-    
-    if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-      guard let url = dialog.url else {
-        return
-      }
-      let path = url.path
-      realmFileTextField.stringValue = path
-      realmFilePath = path
-    } else {
-      // User clicked on "Cancel"
+    guard let path = choosenPath else {
       return
     }
+    
+    realmFileTextField.stringValue = path
+    realmFilePath = path
   }
   
   @IBAction func chooseOutputFolder(_ sender: NSButton) {
-    let dialog = NSOpenPanel()
+    let choosenPath = chooseFileOrFolder(folderSelection: true, fileSelection: false, fileTypes: [])
     
-    dialog.title                   = "Choose an output folder for .csv files"
-    dialog.showsResizeIndicator    = true
-    dialog.showsHiddenFiles        = true
-    dialog.canChooseDirectories    = true
-    dialog.canChooseFiles          = false
-    dialog.canCreateDirectories    = true
-    dialog.allowsMultipleSelection = false
-    
-    if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-      guard let url = dialog.url else {
-        return
-      }
-      let path = url.path
-      outputFolderTextField.stringValue = path
-      outputFolderPath = path
-    } else {
-      // User clicked on "Cancel"
+    guard let path = choosenPath else {
       return
     }
+    
+    outputFolderTextField.stringValue = path
+    outputFolderPath = path
   }
   
   @IBAction func startConvert(_ sender: NSButton) {
@@ -86,6 +60,39 @@ class ViewController: NSViewController {
     }
     
     convertRealmToCSV(realmFilePath: realmFilePath, outputFolderPath: outputFolderPath)
+  }
+  
+  /// Opens dialog to choose a file or folder.
+  ///
+  /// - Parameters:
+  ///   - folderSelection: if folder selection is allowed.
+  ///   - fileSelection: if file selection is allowed.
+  ///   - fileTypes: allowed file types
+  /// - Returns: The path of the choosen folder/file. Return nil if it is canceled.
+  private func chooseFileOrFolder(folderSelection: Bool, fileSelection: Bool, fileTypes: [String]) -> String? {
+    let dialog = NSOpenPanel()
+    
+    dialog.title                   = "Choose an output folder for .csv files"
+    dialog.showsResizeIndicator    = true
+    dialog.showsHiddenFiles        = true
+    dialog.canChooseDirectories    = folderSelection
+    dialog.canChooseFiles          = fileSelection
+    dialog.canCreateDirectories    = true
+    dialog.allowsMultipleSelection = false
+    if (!fileTypes.isEmpty) {
+      dialog.allowedFileTypes        = fileTypes
+    }
+    
+    if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+      guard let url = dialog.url else {
+        return nil
+      }
+      
+      return url.path
+    } else {
+      // User clicked on "Cancel"
+      return nil
+    }
   }
   
   private func convertRealmToCSV(realmFilePath: String, outputFolderPath: String) {
