@@ -29,12 +29,32 @@ class ViewController: NSViewController {
   }
   
   @IBAction func chooseRealmFile(_ sender: NSButton) {
-
+    let dialog = NSOpenPanel()
+    
+    dialog.title                   = "Choose a .realm file"
+    dialog.showsResizeIndicator    = true
+    dialog.showsHiddenFiles        = true
+    dialog.canChooseDirectories    = false
+    dialog.canCreateDirectories    = true
+    dialog.allowsMultipleSelection = false
+    dialog.allowedFileTypes        = ["realm"]
+    
+    if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+      guard let url = dialog.url else {
+        return
+      }
+      let path = url.path
+      realmFileTextField.stringValue = path
+      realmFilePath = path
+    } else {
+      // User clicked on "Cancel"
+      return
+    }
   }
   
   @IBAction func chooseOutputFolder(_ sender: NSButton) {
   }
-
+  
   @IBAction func startConvert(_ sender: NSButton) {
     guard let realmFilePath = realmFilePath else {
       return
