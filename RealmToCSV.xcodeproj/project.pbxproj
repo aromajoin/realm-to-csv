@@ -120,7 +120,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = "Quang Nguyen";
+				ORGANIZATIONNAME = Aromajoin;
 				TargetAttributes = {
 					CEE689822189658200724CC3 = {
 						CreatedOnToolsVersion = 10.0;

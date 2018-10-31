@@ -3,7 +3,7 @@
 //  RealmToCSV
 //
 //  Created by Quang Nguyen on 2018/10/31.
-//  Copyright © 2018 Quang Nguyen. All rights reserved.
+//  Copyright © 2018 Aromajoin. All rights reserved.
 //
 
 import Cocoa
