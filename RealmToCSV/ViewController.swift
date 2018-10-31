@@ -16,18 +16,6 @@ class ViewController: NSViewController {
   private var realmFilePath: String?
   private var outputFolderPath: String?
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
-  }
-  
-  override var representedObject: Any? {
-    didSet {
-      // Update the view, if already loaded.
-    }
-  }
-  
   @IBAction func chooseRealmFile(_ sender: NSButton) {
     let choosenPath = chooseFileOrFolder(folderSelection: false, fileSelection: true, fileTypes: ["realm"])
     
