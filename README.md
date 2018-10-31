@@ -1,6 +1,8 @@
 ## Realm to CSV
-A utility Mac app to convert Realm file (.realm) to CSV (.csv) file.
+A utility Mac app to convert Realm file (.realm) to CSV (.csv) file.  
 This app uses API from [Realm Cocoa Converter](https://github.com/realm/realm-cocoa-converter).  
+
+### Screenshot
 ![Screenshot](/Arts/screenshot.png)
 
 ### Download
