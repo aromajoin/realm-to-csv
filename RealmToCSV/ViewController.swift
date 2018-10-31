@@ -24,13 +24,13 @@ class ViewController: NSViewController {
   }
   
   @IBAction func startConvert(_ sender: NSButton) {
-    convertRealmToCSV()
-  }
-  
-  private func convertRealmToCSV() {
     let realmFilePath = "/Users/user/Desktop/RealmSample/default.realm" // Absolute file path to my Realm file
     let outputFolderPath = "/Users/user/Desktop/RealmSample/" // Absolute path to the folder which will hold the CSV files
     
+    convertRealmToCSV(realmFilePath: realmFilePath, outputFolderPath: outputFolderPath)
+  }
+  
+  private func convertRealmToCSV(realmFilePath: String, outputFolderPath: String) {
     let csvDataExporter = try! CSVDataExporter(realmFilePath: realmFilePath)
     try! csvDataExporter.export(toFolderAtPath: outputFolderPath)
   }
