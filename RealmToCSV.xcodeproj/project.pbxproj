@@ -13,6 +13,7 @@
 		CEE689892189658200724CC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE689882189658200724CC3 /* ViewController.swift */; };
 		CEE6898B2189658400724CC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE6898A2189658400724CC3 /* Assets.xcassets */; };
 		CEE6898E2189658400724CC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE6898C2189658400724CC3 /* Main.storyboard */; };
+		CEFDF6B421B0DB2300B1B84A /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDF6B321B0DB2300B1B84A /* FileUtils.swift */; };
 		DDC377FF9CB95FE4410B9F74 /* Pods_RealmToCSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3546AFD9C93EC10BFD48E3 /* Pods_RealmToCSV.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		CEE6898D2189658400724CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEE6898F2189658400724CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE689902189658400724CC3 /* RealmToCSV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RealmToCSV.entitlements; sourceTree = "<group>"; };
+		CEFDF6B321B0DB2300B1B84A /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				CEE6898C2189658400724CC3 /* Main.storyboard */,
 				CEE6898F2189658400724CC3 /* Info.plist */,
 				CEE689902189658400724CC3 /* RealmToCSV.entitlements */,
+				CEFDF6B321B0DB2300B1B84A /* FileUtils.swift */,
 			);
 			path = RealmToCSV;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFDF6B421B0DB2300B1B84A /* FileUtils.swift in Sources */,
 				CEE689892189658200724CC3 /* ViewController.swift in Sources */,
 				CEE689872189658200724CC3 /* AppDelegate.swift in Sources */,
 			);

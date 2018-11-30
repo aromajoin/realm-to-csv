@@ -56,6 +56,14 @@ class ViewController: NSViewController {
       return
     }
     
+    guard isFileExist(fileFullPath: realmFilePath) else {
+      return
+    }
+    
+    guard isFolderExist(folderFullPath: outputFolderPath) else {
+      return
+    }
+    
     convertRealmToCSV(realmFilePath: realmFilePath, outputFolderPath: outputFolderPath)
   }
   
