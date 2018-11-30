@@ -13,6 +13,7 @@ class ViewController: NSViewController {
   @IBOutlet weak var realmFileTextField: NSTextField!
   @IBOutlet weak var outputFolderTextField: NSTextField!
   @IBOutlet weak var convertButton: NSButton!
+  @IBOutlet weak var messageTextField: NSTextField!
   
   private var realmFilePath: String? {
     didSet {
@@ -49,18 +50,26 @@ class ViewController: NSViewController {
   
   @IBAction func startConvert(_ sender: NSButton) {
     guard let realmFilePath = realmFilePath else {
+      messageTextField.textColor = NSColor.red
+      messageTextField.stringValue = "Please set Realm file path"
       return
     }
     
     guard let outputFolderPath = outputFolderPath else {
+      messageTextField.textColor = NSColor.red
+      messageTextField.stringValue = "Please set output folder path"
       return
     }
     
     guard isFileExist(fileFullPath: realmFilePath) else {
+      messageTextField.textColor = NSColor.red
+      messageTextField.stringValue = "Realm file does not exist"
       return
     }
     
     guard isFolderExist(folderFullPath: outputFolderPath) else {
+      messageTextField.textColor = NSColor.red
+      messageTextField.stringValue = "Output folder does not exist"
       return
     }
     
@@ -107,6 +116,11 @@ class ViewController: NSViewController {
   private func convertRealmToCSV(realmFilePath: String, outputFolderPath: String) {
     let csvDataExporter = try! CSVDataExporter(realmFilePath: realmFilePath)
     try! csvDataExporter.export(toFolderAtPath: outputFolderPath)
+    
+    // Show success message
+    messageTextField.textColor = NSColor.blue
+    messageTextField.stringValue = "Conversion is completed successfuly!"
+    
     // Open output folder in Finder
     NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: outputFolderPath)
   }

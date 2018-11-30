@@ -776,8 +776,17 @@
                                     <action selector="chooseOutputFolder:" target="XfG-lQ-9wD" id="1Wj-09-yNN"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9jm-V5-vor">
+                                <rect key="frame" x="239" y="206" width="4" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="dTU-lH-hlf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="9jm-V5-vor" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="31F-cs-bSc"/>
                             <constraint firstItem="faK-vr-sc0" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="6Uh-cu-g8b"/>
                             <constraint firstItem="CA5-Js-2p2" firstAttribute="leading" secondItem="wJZ-x3-RP0" secondAttribute="trailing" constant="19" id="8bW-GB-eWc"/>
                             <constraint firstItem="P3S-fX-R9f" firstAttribute="centerY" secondItem="Jif-bh-8up" secondAttribute="centerY" id="BIQ-hs-Rk3"/>
@@ -789,11 +798,13 @@
                             <constraint firstItem="wJZ-x3-RP0" firstAttribute="top" secondItem="faK-vr-sc0" secondAttribute="bottom" constant="42" id="jJp-hK-7eI"/>
                             <constraint firstAttribute="bottom" secondItem="fJ5-kf-aEw" secondAttribute="bottom" constant="16" id="jo5-hB-sPw"/>
                             <constraint firstItem="Jif-bh-8up" firstAttribute="top" secondItem="wJZ-x3-RP0" secondAttribute="bottom" constant="23" id="oHb-bH-cbO"/>
+                            <constraint firstItem="9jm-V5-vor" firstAttribute="top" secondItem="faK-vr-sc0" secondAttribute="bottom" constant="8" id="trt-m5-rS4"/>
                             <constraint firstItem="Jif-bh-8up" firstAttribute="leading" secondItem="wJZ-x3-RP0" secondAttribute="leading" id="vuF-AH-MBA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="convertButton" destination="fJ5-kf-aEw" id="zZf-PE-ol2"/>
+                        <outlet property="messageTextField" destination="9jm-V5-vor" id="hcB-Xc-3WS"/>
                         <outlet property="outputFolderTextField" destination="P3S-fX-R9f" id="Bv7-tt-pUH"/>
                         <outlet property="realmFileTextField" destination="CA5-Js-2p2" id="Dxp-96-Rpu"/>
                     </connections>
