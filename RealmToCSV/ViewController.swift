@@ -99,6 +99,8 @@ class ViewController: NSViewController {
   private func convertRealmToCSV(realmFilePath: String, outputFolderPath: String) {
     let csvDataExporter = try! CSVDataExporter(realmFilePath: realmFilePath)
     try! csvDataExporter.export(toFolderAtPath: outputFolderPath)
+    // Open output folder in Finder
+    NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: outputFolderPath)
   }
 }
 
