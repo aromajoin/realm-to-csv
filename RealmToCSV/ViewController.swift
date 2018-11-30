@@ -50,26 +50,22 @@ class ViewController: NSViewController {
   
   @IBAction func startConvert(_ sender: NSButton) {
     guard let realmFilePath = realmFilePath else {
-      messageTextField.textColor = NSColor.red
-      messageTextField.stringValue = "Please set Realm file path"
+      showMessage(isError: true, content: "Please set Realm file path")
       return
     }
     
     guard let outputFolderPath = outputFolderPath else {
-      messageTextField.textColor = NSColor.red
-      messageTextField.stringValue = "Please set output folder path"
+      showMessage(isError: true, content: "Please set output folder path")
       return
     }
     
     guard isFileExist(fileFullPath: realmFilePath) else {
-      messageTextField.textColor = NSColor.red
-      messageTextField.stringValue = "Realm file does not exist"
+      showMessage(isError: true, content: "Realm file does not exist")
       return
     }
     
     guard isFolderExist(folderFullPath: outputFolderPath) else {
-      messageTextField.textColor = NSColor.red
-      messageTextField.stringValue = "Output folder does not exist"
+      showMessage(isError: true, content: "Output folder does not exist")
       return
     }
     
@@ -118,11 +114,20 @@ class ViewController: NSViewController {
     try! csvDataExporter.export(toFolderAtPath: outputFolderPath)
     
     // Show success message
-    messageTextField.textColor = NSColor.blue
-    messageTextField.stringValue = "Conversion is completed successfuly!"
+    showMessage(isError: false, content: "Conversion is completed successfuly!")
     
     // Open output folder in Finder
     NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: outputFolderPath)
+  }
+  
+  private func showMessage(isError: Bool, content: String) {
+    if (isError) {
+      messageTextField.textColor = NSColor.red
+    } else {
+      messageTextField.textColor = NSColor.blue
+    }
+  
+    messageTextField.stringValue = content
   }
 }
 
