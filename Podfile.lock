@@ -18,7 +18,7 @@ DEPENDENCIES:
   - RealmConverter
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - CSwiftV
     - PathKit
     - Realm
@@ -36,4 +36,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0c9deb0e3e5cf1b562c031e6476186232b9da949
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.10.1

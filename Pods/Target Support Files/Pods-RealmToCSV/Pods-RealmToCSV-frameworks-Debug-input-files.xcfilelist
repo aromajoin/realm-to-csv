@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-RealmToCSV/Pods-RealmToCSV-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CSwiftV/CSwiftV.framework
+${BUILT_PRODUCTS_DIR}/PathKit/PathKit.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmConverter/RealmConverter.framework
+${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework
+${BUILT_PRODUCTS_DIR}/TGSpreadsheetWriter/TGSpreadsheetWriter.framework
